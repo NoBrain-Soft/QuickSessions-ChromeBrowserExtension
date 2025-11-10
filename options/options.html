@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickSessions Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1 class="header-title">QuickSessions Settings</h1>
+      <div class="header-version">v1.0.0</div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content">
+      <!-- Startup Behavior Section -->
+      <section class="section">
+        <h2 class="section-title">Startup Behavior</h2>
+        <p class="section-description">Choose what happens when Chrome starts</p>
+        
+        <div class="form-group">
+          <label class="radio-label">
+            <input type="radio" name="startupBehavior" value="none" class="radio-input">
+            <div class="radio-content">
+              <div class="radio-title">Do Nothing</div>
+              <div class="radio-description">Chrome opens normally without any QuickSessions action</div>
+            </div>
+          </label>
+          
+          <label class="radio-label">
+            <input type="radio" name="startupBehavior" value="show_selector" class="radio-input">
+            <div class="radio-content">
+              <div class="radio-title">Show Template Selector</div>
+              <div class="radio-description">Display a page to choose which template to launch</div>
+            </div>
+          </label>
+          
+          <label class="radio-label">
+            <input type="radio" name="startupBehavior" value="auto_launch" class="radio-input">
+            <div class="radio-content">
+              <div class="radio-title">Auto-Launch Default Template</div>
+              <div class="radio-description">Automatically open your chosen default template</div>
+            </div>
+          </label>
+        </div>
+        
+        <div class="form-group" id="default-template-group">
+          <label for="default-template" class="form-label">Default Template</label>
+          <select id="default-template" class="form-select">
+            <option value="">Select a template...</option>
+          </select>
+          <span class="form-hint">This template will be opened automatically on browser start</span>
+        </div>
+      </section>
+
+      <!-- Opening Behavior Section -->
+      <section class="section">
+        <h2 class="section-title">Opening Templates</h2>
+        <p class="section-description">How templates should be opened</p>
+        
+        <div class="form-group">
+          <label class="radio-label">
+            <input type="radio" name="openBehavior" value="new_window" class="radio-input">
+            <div class="radio-content">
+              <div class="radio-title">Open in New Window</div>
+              <div class="radio-description">All tabs open in a separate new window</div>
+            </div>
+          </label>
+          
+          <label class="radio-label">
+            <input type="radio" name="openBehavior" value="current_window" class="radio-input">
+            <div class="radio-content">
+              <div class="radio-title">Open in Current Window</div>
+              <div class="radio-description">Add tabs to the current window</div>
+            </div>
+          </label>
+          
+          <label class="radio-label">
+            <input type="radio" name="openBehavior" value="replace_tabs" class="radio-input">
+            <div class="radio-content">
+              <div class="radio-title">Replace Current Tabs</div>
+              <div class="radio-description">Close current tabs and open template tabs</div>
+            </div>
+          </label>
+        </div>
+        
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="close-existing-tabs" class="checkbox-input">
+            <div class="checkbox-content">
+              <div class="checkbox-title">Close existing tabs when replacing</div>
+              <div class="checkbox-description">Remove all existing tabs (except pinned) when using "Replace Current Tabs"</div>
+            </div>
+          </label>
+        </div>
+      </section>
+
+      <!-- Display Options Section -->
+      <section class="section">
+        <h2 class="section-title">Display Options</h2>
+        <p class="section-description">Customize how templates are displayed</p>
+        
+        <div class="form-group">
+          <label for="sort-by" class="form-label">Sort Templates By</label>
+          <select id="sort-by" class="form-select">
+            <option value="name">Name</option>
+            <option value="created">Date Created</option>
+            <option value="lastUsed">Last Used</option>
+            <option value="usageCount">Usage Count</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="sort-order" class="form-label">Sort Order</label>
+          <select id="sort-order" class="form-select">
+            <option value="asc">Ascending (A-Z, Oldest First)</option>
+            <option value="desc">Descending (Z-A, Newest First)</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="show-favicons" class="checkbox-input">
+            <div class="checkbox-content">
+              <div class="checkbox-title">Show website favicons</div>
+              <div class="checkbox-description">Display website icons in template tabs</div>
+            </div>
+          </label>
+        </div>
+        
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="confirm-delete" class="checkbox-input">
+            <div class="checkbox-content">
+              <div class="checkbox-title">Confirm before deleting templates</div>
+              <div class="checkbox-description">Show confirmation dialog when deleting</div>
+            </div>
+          </label>
+        </div>
+      </section>
+
+      <!-- Appearance Section -->
+      <section class="section">
+        <h2 class="section-title">Appearance</h2>
+        <p class="section-description">Visual preferences</p>
+        
+        <div class="form-group">
+          <label class="radio-label">
+            <input type="radio" name="theme" value="auto" class="radio-input">
+            <div class="radio-content">
+              <div class="radio-title">Auto (System)</div>
+              <div class="radio-description">Follow system theme preference</div>
+            </div>
+          </label>
+          
+          <label class="radio-label">
+            <input type="radio" name="theme" value="light" class="radio-input">
+            <div class="radio-content">
+              <div class="radio-title">Light Mode</div>
+              <div class="radio-description">Always use light theme</div>
+            </div>
+          </label>
+          
+          <label class="radio-label">
+            <input type="radio" name="theme" value="dark" class="radio-input">
+            <div class="radio-content">
+              <div class="radio-title">Dark Mode</div>
+              <div class="radio-description">Always use dark theme</div>
+            </div>
+          </label>
+        </div>
+      </section>
+
+      <!-- Data Management Section -->
+      <section class="section">
+        <h2 class="section-title">Data Management</h2>
+        <p class="section-description">Import, export, and manage your templates</p>
+        
+        <div class="button-group">
+          <button class="btn btn-secondary" id="export-btn">
+            <span class="btn-icon">📤</span>
+            <span class="btn-text">Export Templates</span>
+          </button>
+          
+          <button class="btn btn-secondary" id="import-btn">
+            <span class="btn-icon">📥</span>
+            <span class="btn-text">Import Templates</span>
+          </button>
+          <input type="file" id="import-file" accept=".json" style="display: none;">
+        </div>
+        
+        <div class="info-card">
+          <div class="info-label">Templates Stored</div>
+          <div class="info-value" id="template-count">0</div>
+        </div>
+        
+        <div class="info-card">
+          <div class="info-label">Storage Used</div>
+          <div class="info-value" id="storage-used">0 KB</div>
+        </div>
+      </section>
+
+      <!-- Danger Zone Section -->
+      <section class="section section-danger">
+        <h2 class="section-title">Danger Zone</h2>
+        <p class="section-description">Irreversible actions</p>
+        
+        <div class="button-group">
+          <button class="btn btn-danger" id="reset-settings-btn">
+            <span class="btn-text">Reset Settings to Defaults</span>
+          </button>
+          
+          <button class="btn btn-danger" id="clear-templates-btn">
+            <span class="btn-text">Delete All Templates</span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p class="footer-text">
+        Copyright © NoBrain Software<br />
+        Settings are saved automatically • 
+        <a href="https://github.com/NoBrain-Soft" id="help-link" class="footer-link">Help & Documentation</a>
+        <br /><a href="https://www.flaticon.com/free-icons/create" class="footer-link" title="create icons">Create icons created by Noplubery - Flaticon</a>
+      </p>
+    </footer>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <span class="toast-message" id="toast-message"></span>
+  </div>
+
+  <!-- Confirmation Modal -->
+  <div class="modal" id="confirm-modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="confirm-title">Confirm Action</h2>
+      </div>
+      <div class="modal-body">
+        <p id="confirm-message">Are you sure?</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-text" id="confirm-cancel">Cancel</button>
+        <button class="btn btn-danger" id="confirm-ok">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="options.js"></script>
+</body>
+</html>

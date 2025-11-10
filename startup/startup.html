@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickSessions - Choose a Template</title>
+  <link rel="stylesheet" href="startup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <h1 class="logo-text">QuickSessions</h1>
+        <p class="logo-subtitle">Choose a template to start your session</p>
+      </div>
+    </header>
+
+    <!-- Templates Grid -->
+    <main class="content">
+      <div class="templates-grid" id="templates-grid">
+        <!-- Templates will be dynamically inserted here -->
+      </div>
+
+      <!-- Empty State -->
+      <div class="empty-state" id="empty-state">
+        <div class="empty-state-icon">📑</div>
+        <h2 class="empty-state-title">No Templates Found</h2>
+        <p class="empty-state-text">Create your first template to get started</p>
+        <button class="btn btn-primary" id="create-template-btn">
+          <span class="btn-text">Create Template</span>
+        </button>
+      </div>
+
+      <!-- Loading State -->
+      <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">Loading templates...</p>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <button class="btn btn-text" id="skip-btn">Skip this time</button>
+      <a href="#" class="footer-link" id="settings-link">Settings</a>
+    </footer>
+  </div>
+
+  <script type="module" src="startup.js"></script>
+</body>
+</html>
