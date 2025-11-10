@@ -163,11 +163,6 @@ Each template contains:
 - Keep exported JSON files in cloud storage
 - Templates in Chrome Sync are backed up automatically
 
----
-
-## Icon Attribution
-
-Extension icons should be added to the `assets/icons/` folder. Required sizes: 16x16, 32x32, 48x48, 128x128 pixels.
 
 ---
 
